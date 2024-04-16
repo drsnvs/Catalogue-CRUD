@@ -43,7 +43,7 @@ public class display extends HttpServlet {
                 String url = getInitParameter("url");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignment","root","");
                 st = con.createStatement();
-                rs = st.executeQuery("select * from catalauge");
+                rs = st.executeQuery("select * from book");
                 request.setAttribute("displayRS", rs);
 //                session.setAttribute("displayRS", rs);
                 RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
