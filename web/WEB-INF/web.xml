@@ -6,7 +6,7 @@
     </context-param>
     <servlet>
         <servlet-name>displayC</servlet-name>
-        <servlet-class>displayC</servlet-class>
+        <servlet-class>display</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>displayC</servlet-name>

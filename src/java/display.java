@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author DARSHAN
  */
-public class displayC extends HttpServlet {
+public class display extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,8 +44,9 @@ public class displayC extends HttpServlet {
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignment","root","");
                 st = con.createStatement();
                 rs = st.executeQuery("select * from catalauge");
-                session.setAttribute("displayRS", rs);
-                RequestDispatcher rd = request.getRequestDispatcher("displayC.jsp");
+                request.setAttribute("displayRS", rs);
+//                session.setAttribute("displayRS", rs);
+                RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
                 rd.forward(request, response);
                 /* TODO output your page here. You may use following sample code. */
                 out.println("<!DOCTYPE html>");
