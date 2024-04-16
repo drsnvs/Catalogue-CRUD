@@ -1,0 +1,22 @@
+CREATE TABLE `assignment`.`catalauge` (
+  `catalaugeId` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(254) NOT NULL,
+  PRIMARY KEY (`idcatalaugeId`));
+
+CREATE TABLE `assignment`.`book` (
+  `bookId` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(30) NOT NULL,
+  `author` VARCHAR(30) NOT NULL,
+  `price` DOUBLE NOT NULL,
+  `quantity` INT NOT NULL,
+  `ISBN` VARCHAR(13) NOT NULL,
+  `publisher` VARCHAR(45) NOT NULL,
+  `edition_year` INT NOT NULL,
+  `catalaugeId` INT NOT NULL,
+  PRIMARY KEY (`booId`),
+
+    FOREIGN KEY (`catalaugeId`)
+    REFERENCES `assignment`.`catalauge` (`catalaugeId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
