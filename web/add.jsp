@@ -4,6 +4,10 @@
     Author     : DARSHAN
 --%>
 
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -64,6 +68,16 @@
     </style>
 </head>
 <body>
+    <%
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con=null;
+        Statement st = null;
+        ResultSet rs = null;
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignment", "root", "");
+        st = con.createStatement();
+        rs = st.executeQuery("select * from catalauge");
+//        request.setAttribute("catalaugeRS", rs);
+    %>
     <div id="container">
         <h2>Add Book</h2>
         <form action="add" method="post" onsubmit="return validate()">
@@ -99,10 +113,17 @@
                 <tr>
                     <td>Catalouge</td>
                     <td>
-                        <input type="radio" value=1 name="cID" />
-                        <label>Comedy</label><br>
-                        <input type="radio" value=2 name="cID" />
-                        <label>Drama</label>
+                        <%
+                            while(rs.next()){
+                                
+                        %>
+                        <input type="radio"  name="cID" value=<%=rs.getInt("catalaugeId")%> />
+                        <label><%=rs.getString("title")%></label><br>
+<!--                        <input type="radio" value=2 name="cID" />
+                        <label>Drama</label>-->
+                        <%
+                            }
+                        %>
                     </td>
                 </tr>
                 <tr>
