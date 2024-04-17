@@ -80,7 +80,7 @@
         }
 
         .btn:hover {
-            background-color: #45a049; /* Darker Green */
+            background-color: #0056b3; /* Darker Green */
         }
     </style>
 </head>
@@ -98,7 +98,7 @@
             <td><a href="displayC.jsp" class="btn">Show Catalogue</a></td>
             <td><a href="add.jsp" class="btn">Add Book</a></td>
             <td><a href="display.jsp" class="btn">Display Books</a></td>
-            <td><a href="update.jsp" class="btn">Update Book's details</a></td>
+            <td><a href="update.jsp" class="btn">Update Book</a></td>
             <td><a href="delete.jsp" class="btn">Remove Book</a></td>
         </tr>
     </table>

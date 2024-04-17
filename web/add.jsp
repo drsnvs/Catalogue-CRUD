@@ -45,7 +45,8 @@
         }
         
         input[type="text"],
-        input[type="submit"]
+        input[type="submit"],
+        input[type="number"]
          {
             width: 100%;
             padding: 8px;
@@ -57,9 +58,10 @@
         }
         
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: #45a049;
             color: #fff;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         
         input[type="submit"]:hover {
@@ -111,7 +113,7 @@
                     <td><input type="number" name="eYear" id="eYear" /></td>
                 </tr>
                 <tr>
-                    <td>Catalouge</td>
+                    <td>Catalogue</td>
                     <td>
                         <%
                             while(rs.next()){
