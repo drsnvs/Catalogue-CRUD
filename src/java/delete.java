@@ -48,11 +48,11 @@ public class delete extends HttpServlet {
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignment","root","");
                 st = con.createStatement();
                 int check = st.executeUpdate("delete from book where bookId="+bkid+";");
-//                request.setAttribute("deleteRS", rs);
+                request.setAttribute("check", check);
 
                 
                 if(check>0){
-                    session.setAttribute("c", check);
+//                    session.setAttribute("c", check);
                     RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
                     rd.forward(request, response);
                 }

@@ -36,7 +36,7 @@
         }
 
         /* Heading styles */
-        h2 {
+        h2,h3 {
             text-align: center;
             margin-bottom: 20px;
             color: #333;
@@ -93,13 +93,11 @@
     <h2>Display Books</h2>
     <h3>
         <%
-            int check = Integer.parseInt(session.getAttribute("c").toString());
-            if(check>0){
-                %>
-                <script>
+//            int check = Integer.parseInt(session.getAttribute("c").toString());
+            if(request.getAttribute("check")!=null){
+                %><script>
                     alert("Deleted");
-                </script>
-        <%
+                </script><%
             }
         %>
     </h3>
@@ -139,6 +137,7 @@
             <td><%=rs.getString("catalauge.title")%></td> <!-- Truncate long descriptions -->
         </tr>
         <%
+            
             }
             }catch(Exception e){
                 e.printStackTrace();
