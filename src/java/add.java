@@ -54,7 +54,6 @@ public class add extends HttpServlet {
                 String authorName = request.getParameter("authorName");
                 double bookPrice = 0.0;
                 bookPrice = Double.parseDouble(request.getParameter("bookPrice"));
-                
                 int bookQuantity = Integer.parseInt(request.getParameter("bookQuantity"));
                 String isbn = request.getParameter("isbn");
                 String bookPublisher = request.getParameter("bookPublisher");
@@ -86,8 +85,12 @@ public class add extends HttpServlet {
             out.println("<title>Servlet add</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet add at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
+//            out.println("<h1>Servlet add at " + request.getContextPath() + "</h1>");
+            out.println("</body>"
+                    + "<script>"
+                    + "alert(\"Insert unsuccessful!\");"
+                    + "window.location.href = \"add.jsp\";"
+                    + "</script>");
             out.println("</html>");
         }
     }

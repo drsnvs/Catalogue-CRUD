@@ -66,7 +66,7 @@
 <body>
     <div id="container">
         <h2>Add Book</h2>
-        <form action="add" method="post">
+        <form action="add" method="post" onsubmit="return validate()">
             <table border="0" cellspacing="0">
                 <tr>
                     <td>Book title</td>
@@ -113,5 +113,23 @@
             </table>
         </form>
     </div>
+    <script type="text/javascript">
+        function validate(){
+            var bookTitle = document.getElementById("bookTitle").value;
+            var authorName = document.getElementById("authorName").value;
+            var bookPrice = document.getElementById("bookPrice").value;
+            var bookQuantity = document.getElementById("bookQuantity").value;
+            var isbn = document.getElementById("isbn").value;
+            var bookPublisher = document.getElementById("bookPublisher").value;
+            var eYear = document.getElementById("eYear").value;
+            var cID = document.getElementById("cID").value;
+            
+            if(bookTitle.equals("") || authorName.equals("") || bookPrice.equals("") || bookQuantity.equals("") || isbn.equals("") || bookPublisher.equals("") || eYear.equals("") || cID.equals("")){
+                alert("must fill all fields");
+                return false;
+            }
+        }
+        
+    </script>
 </body>
 </html>

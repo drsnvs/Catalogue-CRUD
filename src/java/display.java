@@ -63,7 +63,7 @@ public class display extends HttpServlet {
                 out.println("</head>");
                 out.println("<body>");
 //                out.println("<h1>Servlet displayC at " + request.getContextPath() + "</h1>");
-out.println("<script>alert(\"insert successfull.\");</script>");
+                out.println("<script>alert(\"insert successfull.\");</script>");
                 out.println("</body>");
                 out.println("</html>");
             }catch(Exception e){
