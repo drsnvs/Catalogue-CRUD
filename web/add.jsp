@@ -66,7 +66,7 @@
 <body>
     <div id="container">
         <h2>Add Book</h2>
-        <form>
+        <form action="add" method="post">
             <table border="0" cellspacing="0">
                 <tr>
                     <td>Book title</td>
@@ -78,11 +78,11 @@
                 </tr>
                 <tr>
                     <td>Book price</td>
-                    <td><input type="text" name="bookPrice" id="bookPrice" /></td>
+                    <td><input type="number" step="0.1" name="bookPrice" id="bookPrice" /></td>
                 </tr>
                 <tr>
                     <td>Book Quantity</td>
-                    <td><input type="text" name="bookQuantity" id="bookQuantity" /></td>
+                    <td><input type="number" name="bookQuantity" id="bookQuantity" /></td>
                 </tr>
                 <tr>
                     <td>ISBN No</td>
@@ -94,14 +94,14 @@
                 </tr>
                 <tr>
                     <td>Edition year</td>
-                    <td><input type="text" name="eYear" id="eYear" /></td>
+                    <td><input type="number" name="eYear" id="eYear" /></td>
                 </tr>
                 <tr>
                     <td>Catalouge</td>
                     <td>
-                        <input type="radio" value="1" name="cID" />
-                        <label>Comdey</label><br>
-                        <input type="radio" value="2" name="cID" />
+                        <input type="radio" value=1 name="cID" />
+                        <label>Comedy</label><br>
+                        <input type="radio" value=2 name="cID" />
                         <label>Drama</label>
                     </td>
                 </tr>

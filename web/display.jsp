@@ -90,7 +90,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>Display Catalogue</h2>
+    <h2>Display Books</h2>
     <table>
         <tr>
             <th>Catalogue ID</th>
