@@ -130,7 +130,7 @@
             <td>
                 <form action="delete" method="post">
                     <input type="hidden" value="<%=rs.getInt("bookId")%>" name="bkid" />
-                    <input class="btn" type="submit" value="Delete"/>
+                    <input class="btn" type="submit" value="Remove"/>
                 </form>
             </td> 
         </tr>

@@ -96,7 +96,7 @@
 //            int check = Integer.parseInt(session.getAttribute("c").toString());
             if(request.getAttribute("check")!=null){
                 %><script>
-                    alert("Deleted");
+                    alert("Book Removed successfully");
                 </script><%
             }
         %>

@@ -16,6 +16,10 @@
         <servlet-name>delete</servlet-name>
         <servlet-class>delete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>update</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>displayC</servlet-name>
         <url-pattern>/displayC</url-pattern>
@@ -27,6 +31,10 @@
     <servlet-mapping>
         <servlet-name>delete</servlet-name>
         <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

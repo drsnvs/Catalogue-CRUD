@@ -74,56 +74,64 @@
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=null;
         Statement st = null;
+        Statement stt = null;
         ResultSet rs = null;
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignment", "root", "");
         st = con.createStatement();
-        rs = st.executeQuery("select * from catalauge");
-//        request.setAttribute("catalaugeRS", rs);
+        int bkid = Integer.parseInt(request.getParameter("bkid"));
+        rs = st.executeQuery("select * from book where bookId="+bkid+";");
+        rs.next();
+        
+        stt = con.createStatement();
+        ResultSet rss = stt.executeQuery("select * from catalauge");
+        
+        request.setAttribute("bkid", bkid);
 
-        ResultSet rss = (ResultSet)request.getAttribute("rs");
-        rss.next();
+//        ResultSet rss = (ResultSet)request.getAttribute("rs");
+//        rss.next();
     %>
     <div id="container">
-        <h2>Add Book</h2>
-        <form action="add" method="post" onsubmit="return validate()">
+        <h2>Update Book</h2>
+        <form action="update" method="post" onsubmit="return validate()">
             <table border="0" cellspacing="0">
+                
                 <tr>
                     <td>Book title</td>
-                    <td><input type="text" value="<%=rss.getInt("bookId")%>" name="bookTitle" id="bookTitle" /></td>
+                    <td><input type="text" value="<%=rs.getString("title")%>" name="bookTitle" id="bookTitle" /></td>
                 </tr>
                 <tr>
                     <td>Author name</td>
-                    <td><input type="text" name="authorName" id="authorName" /></td>
+                    <td><input type="text" name="authorName" value="<%=rs.getString("author")%>" id="authorName" /></td>
                 </tr>
                 <tr>
                     <td>Book price</td>
-                    <td><input type="number" step="0.1" name="bookPrice" id="bookPrice" /></td>
+                    <td><input type="text" value="<%=rs.getString("price")%>" name="bookPrice" id="bookPrice" /></td>
                 </tr>
                 <tr>
                     <td>Book Quantity</td>
-                    <td><input type="number" name="bookQuantity" id="bookQuantity" /></td>
+                    <td><input type="text" value="<%=rs.getString("quantity")%>" name="bookQuantity" id="bookQuantity" /></td>
                 </tr>
                 <tr>
                     <td>ISBN No</td>
-                    <td><input type="text" name="isbn" id="isbn" /></td>
+                    <td><input type="text" value="<%=rs.getString("ISBN")%>" name="isbn" id="isbn" /></td>
                 </tr>
                 <tr>
                     <td>Book Publisher</td>
-                    <td><input type="text" name="bookPublisher" id="bookPublisher" /></td>
+                    <td><input type="text" value="<%=rs.getString("publisher")%>" name="bookPublisher" id="bookPublisher" /></td>
                 </tr>
                 <tr>
                     <td>Edition year</td>
-                    <td><input type="number" name="eYear" id="eYear" /></td>
+                    <td><input type="text" value="<%=rs.getString("edition_year")%>" name="eYear" id="eYear" /></td>
                 </tr>
                 <tr>
                     <td>Catalogue</td>
                     <td>
                         <%
-                            while(rs.next()){
+                            while(rss.next()){
                                 
                         %>
-                        <input type="radio"  name="cID" value=<%=rs.getInt("catalaugeId")%> />
-                        <label><%=rs.getString("title")%></label><br>
+                        <input type="radio"  name="cID" value=<%=rss.getInt("catalaugeId")%> <% if (rss.getInt("catalaugeId") == rs.getInt("catalaugeId")) {%>checked<%}%> />
+                        <label><%=rss.getString("title")%></label><br>
 <!--                        <input type="radio" value=2 name="cID" />
                         <label>Drama</label>-->
                         <%
@@ -133,7 +141,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Insert" />
+                        <input type="hidden" name="bkid" value="<%=rs.getInt("bookId")%>" />
+                        <input type="submit" value="Update" />
                     </td>
                 </tr>
             </table>

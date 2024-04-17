@@ -126,7 +126,12 @@
             <td><%=rs.getString("publisher")%></td>
             <td><%=rs.getInt("edition_year")%></td>
             <td><%=rs.getString("catalauge.title")%></td> <!-- Truncate long descriptions -->
-            <td><input class="btn" type="button" value="Update"/></td> 
+            <td>
+                <form action="updateForm.jsp" method="post">
+                    <input type="hidden" value="<%=rs.getInt("bookId")%>" name="bkid" />
+                    <input class="btn" type="submit" value="Update"/>
+                </form>
+            </td> 
         </tr>
         <%
             }
