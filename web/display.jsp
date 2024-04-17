@@ -102,7 +102,7 @@
             <th>Publisher</th>
             <th>Edition Year</th>
             <th>Quantity</th>
-            <th>Title</th>
+            <th>Catalogue</th>
         </tr>
         <%
             try{
