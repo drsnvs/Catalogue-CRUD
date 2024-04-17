@@ -122,9 +122,10 @@
             var isbn = document.getElementById("isbn").value;
             var bookPublisher = document.getElementById("bookPublisher").value;
             var eYear = document.getElementById("eYear").value;
-            var cID = document.getElementById("cID").value;
+            var cID = document.querySelector('input[name="cID"]:checked');
             
-            if(bookTitle.equals("") || authorName.equals("") || bookPrice.equals("") || bookQuantity.equals("") || isbn.equals("") || bookPublisher.equals("") || eYear.equals("") || cID.equals("")){
+            if(bookTitle == "" || authorName == "" || bookPrice == "" || bookQuantity == "" || isbn == "" || bookPublisher == "" || eYear == "" || cID == ""){
+//            if(bookTitle.equals("") || authorName.equals("") || bookPrice.equals("") || bookQuantity.equals("") || isbn.equals("") || bookPublisher.equals("") || eYear.equals("") || cID.equals("")){
                 alert("must fill all fields");
                 return false;
             }
