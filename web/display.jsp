@@ -101,7 +101,6 @@
             <th>ISBN</th>
             <th>Publisher</th>
             <th>Edition Year</th>
-            <th>Quantity</th>
             <th>Catalogue</th>
         </tr>
         <%
@@ -125,7 +124,6 @@
             <td><%=rs.getString("ISBN")%></td>
             <td><%=rs.getString("publisher")%></td>
             <td><%=rs.getInt("edition_year")%></td>
-            <td><%=rs.getInt("quantity")%></td>
             <td><%=rs.getString("catalauge.title")%></td> <!-- Truncate long descriptions -->
         </tr>
         <%
