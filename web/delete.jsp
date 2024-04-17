@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Update Books</title>
+    <title>Delete Books</title>
     <style>
         /* Reset default margin and padding */
         * {
@@ -89,8 +89,18 @@
     </style>
 </head>
 <body>
+    <%
+        try{
+            HttpSession ssn = request.getSession();
+            if(!ssn.getId().equals(ssn.getAttribute("darshan"))){
+                response.sendRedirect("index.jsp");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    %>
 <div class="container">
-    <h2>Display Books</h2>
+    <h2>Delete Books</h2>
     <table>
         <tr>
             <th>Catalogue ID</th>

@@ -89,6 +89,16 @@
     </style>
 </head>
 <body>
+    <%
+        try{
+            HttpSession ssn = request.getSession();
+            if(!ssn.getId().equals(ssn.getAttribute("darshan"))){
+                response.sendRedirect("index.jsp");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    %>
 <div class="container">
     <h2>Display Catalogue</h2>
     <table>

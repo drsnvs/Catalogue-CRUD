@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Update Book</title>
+    <title>Update-Form Book</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,6 +71,16 @@
 </head>
 <body>
     <%
+        try{
+            HttpSession ssn = request.getSession();
+            if(!ssn.getId().equals(ssn.getAttribute("darshan"))){
+                response.sendRedirect("index.jsp");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    %>
+    <%
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=null;
         Statement st = null;
@@ -91,7 +101,7 @@
 //        rss.next();
     %>
     <div id="container">
-        <h2>Update Book</h2>
+        <h2>Update-From Book</h2>
         <form action="update" method="post" onsubmit="return validate()">
             <table border="0" cellspacing="0">
                 

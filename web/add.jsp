@@ -71,6 +71,16 @@
 </head>
 <body>
     <%
+        try{
+            HttpSession ssn = request.getSession();
+            if(!ssn.getId().equals(ssn.getAttribute("darshan"))){
+                response.sendRedirect("index.jsp");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    %>
+    <%
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=null;
         Statement st = null;

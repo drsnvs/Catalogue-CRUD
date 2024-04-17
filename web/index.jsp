@@ -86,7 +86,7 @@
 </head>
 <body>
     <%
-        session.setAttribute("key", session.getId());
+        session.setAttribute("darshan", session.getId());
     %>
 <div class="container">
     <h1>Book Management System</h1>
