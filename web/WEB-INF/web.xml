@@ -12,6 +12,10 @@
         <servlet-name>add</servlet-name>
         <servlet-class>add</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>delete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>displayC</servlet-name>
         <url-pattern>/displayC</url-pattern>
@@ -19,6 +23,10 @@
     <servlet-mapping>
         <servlet-name>add</servlet-name>
         <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

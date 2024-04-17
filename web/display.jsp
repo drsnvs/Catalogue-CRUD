@@ -91,6 +91,18 @@
 <body>
 <div class="container">
     <h2>Display Books</h2>
+    <h3>
+        <%
+            int check = Integer.parseInt(session.getAttribute("c").toString());
+            if(check>0){
+                %>
+                <script>
+                    alert("Deleted");
+                </script>
+        <%
+            }
+        %>
+    </h3>
     <table>
         <tr>
             <th>Catalogue ID</th>
