@@ -1,8 +1,9 @@
+create database assignment;
 CREATE TABLE `assignment`.`catalauge` (
   `catalaugeId` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `description` VARCHAR(254) NOT NULL,
-  PRIMARY KEY (`idcatalaugeId`));
+  PRIMARY KEY (`catalaugeId`));
 
 CREATE TABLE `assignment`.`book` (
   `bookId` INT NOT NULL AUTO_INCREMENT,
@@ -14,7 +15,7 @@ CREATE TABLE `assignment`.`book` (
   `publisher` VARCHAR(45) NOT NULL,
   `edition_year` INT NOT NULL,
   `catalaugeId` INT NOT NULL,
-  PRIMARY KEY (`booId`),
+  PRIMARY KEY (`bookId`),
 
     FOREIGN KEY (`catalaugeId`)
     REFERENCES `assignment`.`catalauge` (`catalaugeId`)
